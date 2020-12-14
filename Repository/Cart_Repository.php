@@ -16,13 +16,7 @@ class Cart extends Repository
      * @return boolean
      */
 
-    //public function save(array $user, $input_parameters = NULL){
-    //    $user['sql'] = "UPDATE account SET cart_json = '$user[cart_json]' where name = '$user[user]'";
-    //    $result = parent::save($user);
-    //    return $result;
-    //}
-
-    public function updateCartJson(int $userID, string $json_cart, $input_parameters=NULL){
+    public function updateCartJson(int $userID, string $json_cart){
         $user['sql'] = "UPDATE account SET cart_json = $json_cart where id = $userID";
         print $user['sql'];
         $result = parent::save($user);

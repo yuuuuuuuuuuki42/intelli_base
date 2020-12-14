@@ -11,13 +11,15 @@
     $myself = new Cart('root','rootpass');
     $myself->login();
 
+    //$_SESSION
     $id = 1;
     //$id = $_SESSION['account']['id'];
+
     //カートに入ってる商品のid入れる配列
     //セッションに入ってるか入ってないかの処理
     if(isset($_SESSION["cart"])){
         $products = $_SESSION["cart"];
-    }else{ 
+    }else{
         $products = array();
     }
 
