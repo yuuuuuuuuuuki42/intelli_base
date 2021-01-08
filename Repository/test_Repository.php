@@ -16,7 +16,7 @@ class test extends Repository
      * @return array $result 商品ID アカウントID
      */
 
-    public function find( $user, $input_parameters = NULL){
+    public function find(int $user){
         $user['sql'] = "select * from product";
         $result = parent::find($user);
         return $result;

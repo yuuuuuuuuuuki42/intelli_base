@@ -17,7 +17,8 @@
 
         $myself = new test('root','rootpass');
         $myself->login();
-        $product = $myself->find($_SESSION);?><br><?php
+        
+        $product = $myself->find($book_id);?><br><?php
         foreach($product as $value_id){
             $id = $value_id["id"];
         }
