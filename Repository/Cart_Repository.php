@@ -25,7 +25,7 @@ class Cart extends Repository
     public function updateCartJson(int $userID, string $json_cart, $input_parameters=NULL){
         $user['sql'] = "UPDATE account SET cart_json = $json_cart where id = $userID";
         print $user['sql'];
-        $result = parent::save($user);
+        $result = parent::save($json_cart);
         return $result;
     }
 
@@ -46,7 +46,7 @@ class Cart extends Repository
      */
     public function find_cart(int $id, $input_parameters=NULL){
         $user['sql'] = "select cart_json from account where id = $id";
-        $result = parent::find($user);
+        $result = parent::find($id);
 //        var_dump($result);
         // result = [cart_json:[{id:"1"}, {id:"1"}, {id:"101"}]]
 
@@ -75,7 +75,7 @@ class Cart extends Repository
             // var_dump($wkid);
 
             $user['sql'] = "select id, name, price from product where id = $wkid";
-            array_push($result, parent::find($user));
+            array_push($result, parent::find($userId));
             
         }
 
